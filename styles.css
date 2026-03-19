@@ -275,6 +275,38 @@ html {
   color: var(--accent)
 }
 
+.step-flex {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.step-flex-text {
+  flex: 1;
+}
+
+.step-flex img {
+  width: 320px;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: #fdfdfd;
+}
+
+@media (max-width: 850px) {
+  .step-flex {
+    flex-direction: column;
+  }
+
+  .step-flex img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+}
+
 .team ul {
   list-style: disc;
   margin-left: 1.25rem
