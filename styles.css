@@ -6,6 +6,20 @@
   --radius: 8px;
 }
 
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
 * {
   box-sizing: border-box
 }
@@ -448,6 +462,33 @@ html {
   border-radius: 8px;
   background: #fff;
   border: 1px solid #eee
+}
+
+/* Expandable gallery: hidden extra images and controls */
+.gallery-more {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+
+.gallery.expanded .gallery-more {
+  max-height: 2000px;
+  /* large enough to reveal content */
+}
+
+.gallery-controls {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-controls #gallery-toggle {
+  cursor: pointer;
 }
 
 @media(max-width:700px) {
